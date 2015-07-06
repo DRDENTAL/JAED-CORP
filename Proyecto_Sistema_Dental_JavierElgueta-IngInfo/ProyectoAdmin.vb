@@ -67,7 +67,7 @@
     Private Sub GestionarPagosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles GestionarPagosToolStripMenuItem.Click
         PAGOS.MdiParent = Me
         PAGOS.Show()
-        My.Forms.PAGOS.WindowState = FormWindowState.Maximized
+
         If PAGOS.Visible = True Then
             PACIENTES.Close()
             PRESUPUESTO.Close()
@@ -164,33 +164,40 @@
     End Sub
 
     Private Sub ToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem1.Click
-        Me.WindowState = FormWindowState.Minimized
+        Dim result As Integer = MessageBox.Show("¿ Está seguro que quiere Minimizar la aplicación ?", "Minimizando...", MessageBoxButtons.YesNo)
+        If result = DialogResult.No Then
+
+        ElseIf result = DialogResult.Yes Then
+            Me.WindowState = FormWindowState.Minimized
+        End If
     End Sub
 
     Private Sub CerrarToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CerrarToolStripMenuItem.Click
-        Dim result As Integer = MessageBox.Show("¿ Usted está seguro que quiere Salir ?", "Saliendo...", MessageBoxButtons.YesNo)
+        Dim result As Integer = MessageBox.Show("¿ Está seguro que quiere Salir ?", "Saliendo...", MessageBoxButtons.YesNo)
        If result = DialogResult.No Then
 
         ElseIf result = DialogResult.Yes Then
 
             Me.Close()
             Form1.Show()
+            Form1.Opacity = 100.1
+            Form1.Enabled = True
+            Form1.ProgressBar1.Value = 0
         End If
     End Sub
 
     Private Sub CerrarToolStripMenuItem_MouseLeave(sender As Object, e As EventArgs) Handles CerrarToolStripMenuItem.MouseLeave
-        Label1.Visible = False
+        'Label1.Visible = False
     End Sub
 
     Private Sub CerrarToolStripMenuItem_MouseHover(sender As Object, e As EventArgs) Handles CerrarToolStripMenuItem.MouseHover
-        Label1.Visible = True
+        ' Label1.Visible = True
 
     End Sub
 
     Private Sub ToolStripMenuItem2_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem2.Click
         Registro.MdiParent = Me
         Registro.Show()
-        My.Forms.Registro.WindowState = FormWindowState.Maximized
         If Registro.Visible = True Then
             PAGOS.Close()
             PRESUPUESTO.Close()
@@ -216,23 +223,23 @@
     End Sub
 
     Private Sub ProyectoAdmin_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        MsgBox("¡Este producto está hecho para Gestionar a los Pacientes y sus Citas! ", MsgBoxStyle.Information, "BIENVENIDO al Sistema de Información DR.DENTAL")
+        ' MsgBox("¡Este producto está hecho para Gestionar a los Pacientes y sus Citas! ", MsgBoxStyle.Information, "BIENVENIDO al Sistema de Información DR.DENTAL")
     End Sub
 
 
     Private Sub ToolStripMenuItem1_MouseHover(sender As Object, e As EventArgs) Handles ToolStripMenuItem1.MouseHover
-        Label2.Visible = True
+        ' Label2.Visible = True
     End Sub
 
     Private Sub ToolStripMenuItem1_MouseLeave(sender As Object, e As EventArgs) Handles ToolStripMenuItem1.MouseLeave
-        Label2.Visible = False
+        ' Label2.Visible = False
     End Sub
 
 
     Private Sub ToolStripMenuItem3_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem3.Click
         TRATAMIENTOS.MdiParent = Me
         TRATAMIENTOS.Show()
-        My.Forms.Registro.WindowState = FormWindowState.Maximized
+
         If TRATAMIENTOS.Visible = True Then
             PAGOS.Close()
             PRESUPUESTO.Close()
@@ -255,5 +262,9 @@
         If Not Registro Is Nothing Then
             Registro.Close()
         End If
+    End Sub
+
+    Private Sub MenuStrip1_ItemClicked(sender As Object, e As ToolStripItemClickedEventArgs) Handles MenuStrip1.ItemClicked
+
     End Sub
 End Class

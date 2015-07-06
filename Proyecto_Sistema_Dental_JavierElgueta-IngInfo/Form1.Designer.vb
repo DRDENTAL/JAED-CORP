@@ -22,6 +22,7 @@ Partial Class Form1
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -36,6 +37,8 @@ Partial Class Form1
         Me.lmin = New System.Windows.Forms.Label()
         Me.lCerr = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+        Me.ProgressBar1 = New System.Windows.Forms.ProgressBar()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -86,17 +89,18 @@ Partial Class Form1
         '
         'Button1
         '
-        Me.Button1.BackColor = System.Drawing.Color.White
+        Me.Button1.BackColor = System.Drawing.Color.RoyalBlue
         Me.Button1.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Button1.Enabled = False
         Me.Button1.FlatAppearance.BorderSize = 0
         Me.Button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
         Me.Button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.Button1.Font = New System.Drawing.Font("Arial Black", 18.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button1.ForeColor = System.Drawing.Color.Black
-        Me.Button1.Location = New System.Drawing.Point(106, 253)
+        Me.Button1.Location = New System.Drawing.Point(117, 261)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(247, 74)
+        Me.Button1.Size = New System.Drawing.Size(222, 47)
         Me.Button1.TabIndex = 4
         Me.Button1.Text = "ENTRAR"
         Me.Button1.UseVisualStyleBackColor = False
@@ -110,9 +114,9 @@ Partial Class Form1
         Me.Button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.Button3.Font = New System.Drawing.Font("Arial Black", 14.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button3.ForeColor = System.Drawing.Color.Black
-        Me.Button3.Location = New System.Drawing.Point(378, 12)
+        Me.Button3.Location = New System.Drawing.Point(352, 12)
         Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(47, 35)
+        Me.Button3.Size = New System.Drawing.Size(73, 35)
         Me.Button3.TabIndex = 6
         Me.Button3.Text = "X"
         Me.Button3.UseVisualStyleBackColor = False
@@ -128,14 +132,14 @@ Partial Class Form1
         Me.Button2.ForeColor = System.Drawing.Color.Black
         Me.Button2.Location = New System.Drawing.Point(12, 12)
         Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(42, 35)
+        Me.Button2.Size = New System.Drawing.Size(71, 35)
         Me.Button2.TabIndex = 13
         Me.Button2.Text = "__"
         Me.Button2.UseVisualStyleBackColor = False
         '
         'Label3
         '
-        Me.Label3.BackColor = System.Drawing.Color.DodgerBlue
+        Me.Label3.BackColor = System.Drawing.Color.RoyalBlue
         Me.Label3.Dock = System.Windows.Forms.DockStyle.Top
         Me.Label3.Font = New System.Drawing.Font("Playbill", 48.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.SystemColors.Info
@@ -176,7 +180,7 @@ Partial Class Form1
         Me.lmin.BackColor = System.Drawing.Color.White
         Me.lmin.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lmin.ForeColor = System.Drawing.Color.Black
-        Me.lmin.Location = New System.Drawing.Point(-3, 52)
+        Me.lmin.Location = New System.Drawing.Point(8, 52)
         Me.lmin.Name = "lmin"
         Me.lmin.Size = New System.Drawing.Size(75, 18)
         Me.lmin.TabIndex = 20
@@ -198,16 +202,25 @@ Partial Class Form1
         '
         'PictureBox1
         '
-        Me.PictureBox1.BackgroundImage = Global.Proyecto_Sistema_Dental_JavierElgueta_IngInfo.My.Resources.Resources.MSN_Users
-        Me.PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.PictureBox1.Cursor = System.Windows.Forms.Cursors.NoMove2D
-        Me.PictureBox1.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.PictureBox1.Location = New System.Drawing.Point(0, 344)
+        Me.PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.PictureBox1.Cursor = System.Windows.Forms.Cursors.Default
+        Me.PictureBox1.Image = Global.Proyecto_Sistema_Dental_JavierElgueta_IngInfo.My.Resources.Resources.MSN_Users
+        Me.PictureBox1.Location = New System.Drawing.Point(168, 361)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(437, 224)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox1.Size = New System.Drawing.Size(128, 128)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
         Me.PictureBox1.TabIndex = 11
         Me.PictureBox1.TabStop = False
+        '
+        'Timer1
+        '
+        '
+        'ProgressBar1
+        '
+        Me.ProgressBar1.Location = New System.Drawing.Point(168, 495)
+        Me.ProgressBar1.Name = "ProgressBar1"
+        Me.ProgressBar1.Size = New System.Drawing.Size(128, 20)
+        Me.ProgressBar1.TabIndex = 22
         '
         'Form1
         '
@@ -215,6 +228,7 @@ Partial Class Form1
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.ClientSize = New System.Drawing.Size(437, 568)
+        Me.Controls.Add(Me.ProgressBar1)
         Me.Controls.Add(Me.lCerr)
         Me.Controls.Add(Me.lmin)
         Me.Controls.Add(Me.Button2)
@@ -253,5 +267,7 @@ Partial Class Form1
     Friend WithEvents Button2 As System.Windows.Forms.Button
     Friend WithEvents lmin As System.Windows.Forms.Label
     Friend WithEvents lCerr As System.Windows.Forms.Label
+    Friend WithEvents Timer1 As System.Windows.Forms.Timer
+    Friend WithEvents ProgressBar1 As System.Windows.Forms.ProgressBar
 
 End Class

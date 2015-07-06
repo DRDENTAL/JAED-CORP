@@ -81,7 +81,7 @@
 
     End Sub
 
-    Private Sub GestionarPresupuestoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles GestionarPresupuestoToolStripMenuItem.Click
+    Private Sub GestionarPresupuestoToolStripMenuItem_Click(sender As Object, e As EventArgs)
         PRESUPUESTO.MdiParent = Me
         PRESUPUESTO.Show()
         My.Forms.PRESUPUESTO.WindowState = FormWindowState.Maximized
@@ -155,19 +155,23 @@
 
             Me.Close()
             Form1.Show()
+            Form1.Opacity = 100.1
+            Form1.Enabled = True
+            Form1.ProgressBar1.Value = 0
+
         End If
     End Sub
 
     Private Sub CerrarToolStripMenuItem_MouseLeave(sender As Object, e As EventArgs) Handles CerrarToolStripMenuItem.MouseLeave
-        Label1.Visible = False
+        'Label1.Visible = False
     End Sub
 
     Private Sub CerrarToolStripMenuItem_MouseHover(sender As Object, e As EventArgs) Handles CerrarToolStripMenuItem.MouseHover
-        Label1.Visible = True
+        'Label1.Visible = True
 
     End Sub
 
-    Private Sub ToolStripMenuItem2_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem2.Click
+    Private Sub ToolStripMenuItem2_Click(sender As Object, e As EventArgs)
         Registro.MdiParent = Me
         Registro.Show()
         My.Forms.Registro.WindowState = FormWindowState.Maximized
@@ -194,11 +198,11 @@
 
 
     Private Sub ToolStripMenuItem1_MouseHover(sender As Object, e As EventArgs) Handles ToolStripMenuItem1.MouseHover
-        Label2.Visible = True
+        'Label2.Visible = True
     End Sub
 
     Private Sub ToolStripMenuItem1_MouseLeave(sender As Object, e As EventArgs) Handles ToolStripMenuItem1.MouseLeave
-        Label2.Visible = False
+        'Label2.Visible = False
     End Sub
 
 

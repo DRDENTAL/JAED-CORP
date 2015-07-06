@@ -17,6 +17,7 @@ Public Class PACIENTES
     End Sub
     Private Sub PACIENTES_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         Me.txtRut.FindForm()
+
         Me.txtRut.CharacterCasing = CharacterCasing.Upper
         Me.txtNomApe.CharacterCasing = CharacterCasing.Upper
         Me.txtApellido.CharacterCasing = CharacterCasing.Upper
@@ -26,6 +27,15 @@ Public Class PACIENTES
         txtApellido.Enabled = False
         txtEmail.Enabled = False
         txtTel.Enabled = False
+        Me.WindowState = FormWindowState.Maximized
+        '   Me.txtRut.Left = (Screen.PrimaryScreen.WorkingArea.Width - Me.Width) / 2
+        Dim c As Control = CType(FlowLayoutPanel1, Control)
+        'le  establece el top y el Left dentro del Parent  
+        With c
+            '.Top = (Me.Width - Screen.PrimaryScreen.WorkingArea.Height) / 2 + Label1.Height
+            '.Top = (Screen.PrimaryScreen.WorkingArea.Height - c.Height) / 2
+            .Left = (.Parent.ClientSize.Width - c.Width) \ 2
+        End With
         Try
             Dim da As New SqlDataAdapter("select rut,nombres,apellidos,telefono,email from dbo.pacientes", conexion)
             Dim ds As New DataSet

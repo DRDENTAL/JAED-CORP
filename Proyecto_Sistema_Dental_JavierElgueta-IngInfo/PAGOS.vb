@@ -26,6 +26,15 @@ Public Class PAGOS
         'TODO: esta línea de código carga datos en la tabla 'DRDENTALDataSet.presupuesto' Puede moverla o quitarla según sea necesario.
         'Me.PresupuestoTableAdapter.Fill(Me.DRDENTALDataSet.presupuesto)
         txtRutPagos.CharacterCasing = CharacterCasing.Upper
+        Me.WindowState = FormWindowState.Maximized
+        Dim c As Control = CType(FlowLayoutPanel1, Control)
+        'le  establece el top y el Left dentro del Parent  
+        With c
+            '  .Top = (.Parent.ClientSize.Height - c.Height) \ 2
+            .Left = (.Parent.ClientSize.Width - c.Width) \ 2
+        End With
+
+       
         Try
             Dim da As New SqlDataAdapter("select rut,nombres,apellidos,fecha,monto,tratamiento from dbo.pagos", conexion)
             Dim ds As New DataSet
@@ -86,7 +95,7 @@ Public Class PAGOS
         Else
             txtNombres.Text = ""
             txtApellidos.Text = ""
-            MsgBox("No se guardo el pago", MsgBoxStyle.Exclamation)
+            'MsgBox("No se guardo el pago", MsgBoxStyle.Exclamation)
         End If
     End Sub
     Private Sub registrarpago()
@@ -123,10 +132,16 @@ Public Class PAGOS
         nombres = txtNombres.Text
         If rut = "" Then
             m1.Visible = True
+            m2.Visible = False
+            m3.Visible = False
+            Label5.Visible = False
+            Label7.Visible = False
+
         Else
             m1.Visible = False
         End If
         Call Me.buscarpaciente()
+        txtRutPagos.Select()
     End Sub
     Private Sub buscarpaciente()
         If rut <> "" Then
@@ -214,5 +229,22 @@ Public Class PAGOS
                 txtRutPagos.Focus()
                 '`'  txtTotal.Text = (txtTasaB.Text + txtComisionB.Text + txtGasto.Text + txtIva.Text + txtNotificacion.Text)
         End Select
+    End Sub
+
+    Private Sub Label1_Click(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub btnVerPagos_Click(sender As Object, e As EventArgs) Handles btnVerPagos.Click
+        If DataGridView1.Visible = False Then
+            DataGridView1.Visible = True
+        Else
+            DataGridView1.Visible = False
+        End If
+
+    End Sub
+
+    Private Sub FlowLayoutPanel1_Paint(sender As Object, e As PaintEventArgs) Handles FlowLayoutPanel1.Paint
+
     End Sub
 End Class

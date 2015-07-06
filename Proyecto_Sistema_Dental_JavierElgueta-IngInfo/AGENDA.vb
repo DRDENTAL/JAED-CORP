@@ -17,13 +17,18 @@ Public Class AGENDA
     End Sub
     Private Sub AGENDA_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         'Timer1.Start()
-        MessageBox.Show("Debe pedir el Rut al Paciente", " Antes de continuar...", MessageBoxButtons.OK, MessageBoxIcon.Error)
-        PAGOS.Close()
-        PRESUPUESTO.Close()
-        Registro.Close()
-        PACIENTES.Close()
-        TRATAMIENTOS.Close()
-        Me.WindowState = FormWindowState.Maximized
+        ' MessageBox.Show("Solicitar Rut al Paciente", " RECUERDE...", MessageBoxButtons.OK, MessageBoxIcon.Asterisk)
+        Dim d As Control = CType(FlowLayoutPanel1, Control)
+        'le  establece el top y el Left dentro del Parent  
+
+        With d
+            ' .Top = (Screen.PrimaryScreen.WorkingArea.Height - Me.Height) / 2
+            '.Top = (.Parent.ClientSize.Height - Me.Height) \ 2
+            .Left = (Screen.PrimaryScreen.WorkingArea.Width - Me.FlowLayoutPanel1.Width) / 2
+            '.Left = (.Parent.ClientSize.Width - d.Width) \ 2
+        End With
+
+        'Me.WindowState = FormWindowState.Maximized
 
         txtrut.CharacterCasing = CharacterCasing.Upper
 
@@ -353,5 +358,9 @@ Public Class AGENDA
             IngresarID.MdiParent = ProyectoAdmin
             IngresarID.Show()
         End If
+    End Sub
+
+    Private Sub FlowLayoutPanel1_Paint(sender As Object, e As PaintEventArgs) Handles FlowLayoutPanel1.Paint
+
     End Sub
 End Class

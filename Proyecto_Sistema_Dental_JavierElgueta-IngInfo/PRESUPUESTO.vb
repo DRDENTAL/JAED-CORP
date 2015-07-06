@@ -26,7 +26,7 @@ Public Class PRESUPUESTO
             e.Handled = False
         Else
             e.Handled = True
-            MsgBox("Solo Numeros", MsgBoxStyle.Information, "Error al ingresar")
+            MsgBox("Debe ingresar solo Numeros", MsgBoxStyle.Information, "Error de tipeo...")
         End If
     End Sub
 
@@ -52,7 +52,7 @@ Public Class PRESUPUESTO
         If TextBox2.Text = Nothing And TextBox1.Text = Nothing Then
 
             TextBox2.Focus()
-            MsgBox("Falta ingresar el Nombre de un Tratamiento o el valor", MessageBoxButtons.OK, "Falta Informacion")
+            MsgBox("Falta ingresar el Nombre de un Tratamiento o el valor", MessageBoxButtons.OK, "Falta Ingresar Informacion")
             Try
                 Dim da As New SqlDataAdapter("select id,arancel,nombre from dbo.presupuesto", conexion)
                 Dim ds As New DataSet
@@ -95,7 +95,7 @@ Public Class PRESUPUESTO
             conectar()
             com = New SqlClient.SqlCommand(sql, coneccion)
             res = com.ExecuteNonQuery
-            MessageBox.Show("Ha guardado exitosamente", "presupuesto", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            MessageBox.Show("Ha guardado exitosamente un nuevo Tratamiento y su Arancel", "presupuesto", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             coneccion.Close()
             Try
                 Dim da As New SqlDataAdapter("select id,arancel,nombre from dbo.presupuesto where nombre= '" & nombre & "' ", conexion)
@@ -545,6 +545,15 @@ Public Class PRESUPUESTO
 
     Private Sub PRESUPUESTO_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         TextBox2.Select()
+        TextBox2.CharacterCasing = CharacterCasing.Upper
+        Me.WindowState = FormWindowState.Maximized
+        Dim c As Control = CType(FlowLayoutPanel1, Control)
+        'le  establece el top y el Left dentro del Parent  
+        With c
+            ' .Top = (.Parent.ClientSize.Height - c.Height) \ 2
+            .Left = (.Parent.ClientSize.Width - c.Width) \ 2
+        End With
+
         'CheckBox1.Checked = False
         'CheckBox2.Checked = False
         'CheckBox3.Checked = False
@@ -867,9 +876,7 @@ Public Class PRESUPUESTO
         End Try
     End Sub
 
-    Private Sub Button16_Click(sender As Object, e As EventArgs)
-        Me.WindowState = FormWindowState.Minimized
-    End Sub
+  
 
     Private Sub TextBox2_KeyDown(sender As Object, e As KeyEventArgs) Handles TextBox2.KeyDown
         arancel = TextBox1.Text
@@ -889,7 +896,7 @@ Public Class PRESUPUESTO
                 If TextBox2.Text = Nothing Then
 
                     TextBox2.Focus()
-                    MsgBox("Debe ingresar el Nombre de un Tratamiento", MessageBoxButtons.OK, "Falta Informacion")
+                    MsgBox("Debe ingresar el Nombre de un Tratamiento", MessageBoxButtons.OK, "Falta Ingresar Informacion")
                     Try
                         Dim da As New SqlDataAdapter("select id,arancel,nombre from dbo.presupuesto", conexion)
                         Dim ds As New DataSet
@@ -936,7 +943,7 @@ Public Class PRESUPUESTO
                 If TextBox1.Text = Nothing Then
 
                     TextBox1.Focus()
-                    MsgBox("Debe ingresar el Nombre de un Tratamiento", MessageBoxButtons.OK, "Falta Informacion")
+                    MsgBox("Debe ingresar el Nombre de un Tratamiento", MessageBoxButtons.OK, "Falta ingresar Informacion")
                     Try
                         Dim da As New SqlDataAdapter("select id,arancel,nombre from dbo.presupuesto", conexion)
                         Dim ds As New DataSet
@@ -963,5 +970,24 @@ Public Class PRESUPUESTO
                 'TextBox2.Focus()
                 '`'  txtTotal.Text = (txtTasaB.Text + txtComisionB.Text + txtGasto.Text + txtIva.Text + txtNotificacion.Text)
         End Select
+    End Sub
+
+    Private Sub TextBox2_TextChanged(sender As Object, e As EventArgs) Handles TextBox2.TextChanged
+
+    End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        TextBox1.Text = ""
+        TextBox2.Text = ""
+        TextBox2.Select()
+        Try
+            Dim da As New SqlDataAdapter("select id,arancel,nombre from dbo.presupuesto", conexion)
+            Dim ds As New DataSet
+            da.Fill(ds, "presupuesto")
+            Me.DataGridView1.DataSource = ds.Tables("presupuesto")
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
     End Sub
 End Class

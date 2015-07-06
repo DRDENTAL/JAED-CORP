@@ -31,8 +31,6 @@ Partial Class ProyectoAdmin
         Me.GestionarPresupuestoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
         Me.GestionarSecretariasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
         Me.ToolStripMenuItem3 = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
@@ -40,15 +38,15 @@ Partial Class ProyectoAdmin
         'MenuStrip1
         '
         Me.MenuStrip1.AutoSize = False
-        Me.MenuStrip1.BackColor = System.Drawing.Color.DodgerBlue
+        Me.MenuStrip1.BackColor = System.Drawing.Color.RoyalBlue
         Me.MenuStrip1.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.MenuStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Visible
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CerrarToolStripMenuItem, Me.ToolStripMenuItem1, Me.GestionarPacientesToolStripMenuItem, Me.GestionarPagosToolStripMenuItem, Me.GestionarPresupuestoToolStripMenuItem, Me.ToolStripMenuItem2, Me.GestionarSecretariasToolStripMenuItem, Me.ToolStripMenuItem3})
-        Me.MenuStrip1.Location = New System.Drawing.Point(0, 612)
+        Me.MenuStrip1.Location = New System.Drawing.Point(0, 632)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(1314, 70)
+        Me.MenuStrip1.Size = New System.Drawing.Size(1314, 50)
         Me.MenuStrip1.Stretch = False
-        Me.MenuStrip1.TabIndex = 26
+        Me.MenuStrip1.TabIndex = 25
         Me.MenuStrip1.Text = "MenuStrip1"
         '
         'CerrarToolStripMenuItem
@@ -58,7 +56,7 @@ Partial Class ProyectoAdmin
         Me.CerrarToolStripMenuItem.Image = CType(resources.GetObject("CerrarToolStripMenuItem.Image"), System.Drawing.Image)
         Me.CerrarToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.CerrarToolStripMenuItem.Name = "CerrarToolStripMenuItem"
-        Me.CerrarToolStripMenuItem.Size = New System.Drawing.Size(44, 66)
+        Me.CerrarToolStripMenuItem.Size = New System.Drawing.Size(44, 46)
         '
         'ToolStripMenuItem1
         '
@@ -67,72 +65,48 @@ Partial Class ProyectoAdmin
         Me.ToolStripMenuItem1.Image = CType(resources.GetObject("ToolStripMenuItem1.Image"), System.Drawing.Image)
         Me.ToolStripMenuItem1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
-        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(44, 66)
+        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(44, 46)
         '
         'GestionarPacientesToolStripMenuItem
         '
-        Me.GestionarPacientesToolStripMenuItem.Font = New System.Drawing.Font("Segoe UI", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GestionarPacientesToolStripMenuItem.Font = New System.Drawing.Font("Arial Black", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GestionarPacientesToolStripMenuItem.Name = "GestionarPacientesToolStripMenuItem"
-        Me.GestionarPacientesToolStripMenuItem.Size = New System.Drawing.Size(171, 66)
+        Me.GestionarPacientesToolStripMenuItem.Size = New System.Drawing.Size(158, 46)
         Me.GestionarPacientesToolStripMenuItem.Text = "Pacientes"
         '
         'GestionarPagosToolStripMenuItem
         '
-        Me.GestionarPagosToolStripMenuItem.Font = New System.Drawing.Font("Segoe UI", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GestionarPagosToolStripMenuItem.Font = New System.Drawing.Font("Arial Black", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GestionarPagosToolStripMenuItem.Name = "GestionarPagosToolStripMenuItem"
-        Me.GestionarPagosToolStripMenuItem.Size = New System.Drawing.Size(122, 66)
+        Me.GestionarPagosToolStripMenuItem.Size = New System.Drawing.Size(107, 46)
         Me.GestionarPagosToolStripMenuItem.Text = "Pagos"
         '
         'GestionarPresupuestoToolStripMenuItem
         '
-        Me.GestionarPresupuestoToolStripMenuItem.Font = New System.Drawing.Font("Segoe UI", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GestionarPresupuestoToolStripMenuItem.Font = New System.Drawing.Font("Arial Black", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GestionarPresupuestoToolStripMenuItem.Name = "GestionarPresupuestoToolStripMenuItem"
-        Me.GestionarPresupuestoToolStripMenuItem.Size = New System.Drawing.Size(231, 66)
+        Me.GestionarPresupuestoToolStripMenuItem.Size = New System.Drawing.Size(207, 46)
         Me.GestionarPresupuestoToolStripMenuItem.Text = "Presupuestos"
         '
         'ToolStripMenuItem2
         '
-        Me.ToolStripMenuItem2.Font = New System.Drawing.Font("Segoe UI", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ToolStripMenuItem2.Font = New System.Drawing.Font("Arial Black", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ToolStripMenuItem2.Name = "ToolStripMenuItem2"
-        Me.ToolStripMenuItem2.Size = New System.Drawing.Size(194, 66)
+        Me.ToolStripMenuItem2.Size = New System.Drawing.Size(180, 46)
         Me.ToolStripMenuItem2.Text = "Secretarias"
         '
         'GestionarSecretariasToolStripMenuItem
         '
-        Me.GestionarSecretariasToolStripMenuItem.Font = New System.Drawing.Font("Segoe UI", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GestionarSecretariasToolStripMenuItem.Font = New System.Drawing.Font("Arial Black", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GestionarSecretariasToolStripMenuItem.Name = "GestionarSecretariasToolStripMenuItem"
-        Me.GestionarSecretariasToolStripMenuItem.Size = New System.Drawing.Size(148, 66)
+        Me.GestionarSecretariasToolStripMenuItem.Size = New System.Drawing.Size(126, 46)
         Me.GestionarSecretariasToolStripMenuItem.Text = "Agenda"
-        '
-        'Label1
-        '
-        Me.Label1.BackColor = System.Drawing.Color.White
-        Me.Label1.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(0, 575)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(1314, 37)
-        Me.Label1.TabIndex = 28
-        Me.Label1.Text = "Cerrar"
-        Me.Label1.Visible = False
-        '
-        'Label2
-        '
-        Me.Label2.BackColor = System.Drawing.Color.White
-        Me.Label2.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(0, 538)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(1314, 37)
-        Me.Label2.TabIndex = 29
-        Me.Label2.Text = "Minimizar"
-        Me.Label2.Visible = False
         '
         'ToolStripMenuItem3
         '
-        Me.ToolStripMenuItem3.Font = New System.Drawing.Font("Segoe UI", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ToolStripMenuItem3.Font = New System.Drawing.Font("Arial Black", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ToolStripMenuItem3.Name = "ToolStripMenuItem3"
-        Me.ToolStripMenuItem3.Size = New System.Drawing.Size(160, 66)
+        Me.ToolStripMenuItem3.Size = New System.Drawing.Size(140, 46)
         Me.ToolStripMenuItem3.Text = "Historial"
         '
         'ProyectoAdmin
@@ -144,8 +118,6 @@ Partial Class ProyectoAdmin
         Me.BackgroundImage = Global.Proyecto_Sistema_Dental_JavierElgueta_IngInfo.My.Resources.Resources.dental
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(1314, 682)
-        Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.MenuStrip1)
         Me.Cursor = System.Windows.Forms.Cursors.Hand
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
@@ -169,7 +141,5 @@ Partial Class ProyectoAdmin
     Friend WithEvents GestionarSecretariasToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ToolStripMenuItem2 As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents Label1 As System.Windows.Forms.Label
-    Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents ToolStripMenuItem3 As System.Windows.Forms.ToolStripMenuItem
 End Class

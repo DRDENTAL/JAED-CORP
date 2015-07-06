@@ -119,24 +119,6 @@
       <DependentUpon>Form1.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GESTIONAR_AGENDA.Designer.vb">
-      <DependentUpon>GESTIONAR_AGENDA.vb</DependentUpon>
-    </Compile>
-    <Compile Include="GESTIONAR_AGENDA.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GESTIONAR_PACIENTES.Designer.vb">
-      <DependentUpon>GESTIONAR_PACIENTES.vb</DependentUpon>
-    </Compile>
-    <Compile Include="GESTIONAR_PACIENTES.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GESTIONAR_PAGOS.Designer.vb">
-      <DependentUpon>GESTIONAR_PAGOS.vb</DependentUpon>
-    </Compile>
-    <Compile Include="GESTIONAR_PAGOS.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="IngresarID.Designer.vb">
       <DependentUpon>IngresarID.vb</DependentUpon>
     </Compile>
@@ -164,12 +146,6 @@
       <DependentUpon>PRESUPUESTO.vb</DependentUpon>
     </Compile>
     <Compile Include="PRESUPUESTO.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Proyecto.Designer.vb">
-      <DependentUpon>Proyecto.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Proyecto.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ProyectoAdmin.Designer.vb">
@@ -229,9 +205,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PRESUPUESTO.resx">
       <DependentUpon>PRESUPUESTO.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Proyecto.resx">
-      <DependentUpon>Proyecto.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ProyectoAdmin.resx">
       <DependentUpon>ProyectoAdmin.vb</DependentUpon>

@@ -46,7 +46,7 @@ Public Class IngresarID
     End Sub
 
     Private Sub IngresarID_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Me.WindowState = FormWindowState.Maximized
+
     End Sub
 
 
@@ -149,5 +149,18 @@ Public Class IngresarID
 
                 '`'  txtTotal.Text = (txtTasaB.Text + txtComisionB.Text + txtGasto.Text + txtIva.Text + txtNotificacion.Text)
         End Select
+    End Sub
+
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+        Me.Close()
+    End Sub
+
+    Private Sub Button3_MouseLeave(sender As Object, e As EventArgs) Handles Button3.MouseLeave
+        lCerr.Visible = True
+
+    End Sub
+
+    Private Sub Button3_MouseHover(sender As Object, e As EventArgs) Handles Button3.MouseHover
+        lCerr.Visible = False
     End Sub
 End Class
